@@ -1,0 +1,277 @@
+
+body{
+    min-height: 100vh;
+}
+
+.clock,.clock2{
+    border: 15px solid black;
+     margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+.clock2{
+    border: 10px solid rgb(71, 46, 162);
+}
+
+
+.text{
+    position: absolute;
+    top: 25%;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+.text2{
+    position: absolute;
+    bottom: 25%;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.second,
+.num{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.second span { 
+    position: absolute; 
+    text-align: center; 
+    width: 2px; 
+    height: 12px; 
+    background-color: black; 
+}
+
+.second span:nth-child(5n+3) { 
+    background-color: red; 
+} 
+    
+     
+.second span:nth-child(-n+15) { 
+    position: absolute;
+    left: 55%;
+    transform: translateX(calc((var(--index) - 8) * 28px)) translateY(10px); 
+}
+
+.second span:nth-child(n+16):nth-child(-n+30) { 
+    width: 10px;
+    height: 2px;
+    transform: translateX(460px) translateY(calc((var(--index) - 14) * 28px + 20px)); 
+}
+
+.second span:nth-child(n+31):nth-child(-n+45) {
+    position: absolute;
+    transform: translateX(calc((45 - var(--index)) * 28px + 20px)) translateY(480px); 
+}
+
+.second span:nth-child(n+46):nth-child(-n+60) {
+    width: 10px;
+    height: 2px; 
+    transform: translateX(10px) translateY(calc((60 - var(--index)) * 28px + 20px)); 
+}
+
+
+/* .second span{
+    position: absolute;
+    text-align: center;
+}
+
+
+
+
+.second span:nth-child(5n) p{
+    width: 6px;
+    transform: translateY(1px);
+}
+
+.second span p{
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background-color: black;
+} */
+
+.num span{
+    position: absolute;
+    /* transform: rotate(calc(var(--index)*30deg));
+    inset: 6px; */
+    font-size: 80px;
+    padding: 0;
+    margin: 0; 
+}
+
+.n12{
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.n1{
+    top: 10px;
+    left: 75%;
+    transform: translateX(-50%);
+}
+
+.n11{
+    top: 10px;
+    left: 25%;
+    transform: translateX(-50%);
+}
+
+.n3{
+    top: 50%;
+    right: 6%;
+    transform: translateY(-50%);
+}
+
+.n2{
+    top: 30%;
+    right: 6%;
+    transform: translateY(-50%);
+}
+
+.n4{
+    top: 70%;
+    right: 6%;
+    transform: translateY(-50%);
+}
+
+.n6{
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.n5{
+    bottom: 10px;
+    left: 75%;
+    transform: translateX(-50%);
+}
+
+.n7{
+    bottom: 10px;
+    left: 25%;
+    transform: translateX(-50%);
+}
+
+.n10{
+    top: 30%;
+    left: 6%;
+    transform: translateY(-50%);
+}
+.n9{
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+}
+.n8{
+    top: 70%;
+    left: 6%;
+    transform: translateY(-50%);
+}
+
+
+
+/* .num span p{
+    font-size: 80px;
+    padding: 0;
+    margin: 0;   
+} */
+
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .hand{
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.box .hand i{
+    display: inline-block;
+    transform-origin: bottom;
+}
+
+.box .hour{
+    width: 330px;
+    height: 330px;
+}
+
+
+.box .hour::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+
+.box .hour i{
+    width: 8px;
+    height: calc(160px + 50px);
+    background-color: black;
+    border-radius: 10px;
+}
+
+.box .min{
+    width: 400px;
+    height: 400px;
+}
+
+.box .min::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+
+}
+
+.box .min i{
+    width: 6px;
+    height: calc(210px + 50px);
+    background-color: black;
+    border-radius: 10px;
+}
+
+.box .sec{
+    width: 400px;
+    height: 400px;
+}
+
+.box .sec::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: rgb(14, 14, 14);
+    border-radius: 50%;
+
+}
+
+.box .sec i{
+    width: 4px;
+    height: calc(210px + 70px);
+    background-color: black;
+    border-radius: 10px;
+}
